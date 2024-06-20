@@ -4,8 +4,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
-        Saske saske = new Saske(1000.00, 600d);
+       Saske saske = new Saske(1000.00, 900d);
         Gaara gaara = new Gaara(1000.00, 400d);
         saske.atack();
         gaara.health -= saske.damage;
@@ -17,9 +16,8 @@ public class Main {
         } else if (gaara.health < 300) {
             gaara.rage();
             saske.health -= (gaara.damage*2);
-            System.out.println("Saske is health " + saske.health);
+            System.out.println("Saske takes critical damage " + gaara.damage*2 + "\n Saske HP = " + saske.health);
         }
-
 
     }
 }
