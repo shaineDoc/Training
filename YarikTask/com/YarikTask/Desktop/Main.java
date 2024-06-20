@@ -4,6 +4,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
+       public static void main(String[] args) {
        Saske saske = new Saske(1000.00, 900d);
         Gaara gaara = new Gaara(1000.00, 400d);
         saske.atack();
