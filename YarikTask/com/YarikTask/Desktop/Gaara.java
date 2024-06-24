@@ -12,8 +12,13 @@ public class Gaara extends Ninja {
 
     }
 
-    Double regenerate;
-    Double damage;
+   private Double regenerate;
+   private Double damage;
+
+
+    public Double getDamage() {
+        return damage;
+    }
 
     public double[] sunaShuriken() {
         Random random = new Random();
@@ -28,12 +33,13 @@ public class Gaara extends Ninja {
 
     private double[] sunaNoKaivan() {
         Random random = new Random();
-        double rageAtack = 100 + (random.nextDouble() * 3);
+        double rageAtack = 250 + (random.nextDouble() * 3);
         double fixUsedChakra = 30 + (100 / random.nextDouble());
         return new double[]{
                 rageAtack, fixUsedChakra
         };
     }
+
 
 
     public double[] sunaNoTate() {
@@ -52,22 +58,26 @@ public class Gaara extends Ninja {
         return regenerate;
     }
 
-    public double rage() {
-        System.out.println(" Oh no, Gaara gose into a rage\n! " + "Damage increased by 2".toUpperCase());
+    public double rage() throws InterruptedException {
+        System.out.println(" Oh no, Gaara gose into a rage\n " + "! Damage increased by 2 !".toUpperCase());
+        Thread.sleep(500);
         Random myRand = new Random();
         shikaku();
         System.out.println("HP Gaara is increased to "+ health );
+        Thread.sleep(500);
         double randomInteger = myRand.nextInt(2);
         if (randomInteger == 0) {
             double[] rageSunaShuriken = sunaShuriken();// атака 1
-            damage = rageSunaShuriken[0] * 3;
+            damage = rageSunaShuriken[0] * 2;
             chakra -= rageSunaShuriken[1];
             System.out.println("shikaku broke out of Gaara and Atack! \n unbelievably ! is atack  " + damage);
+            Thread.sleep(500);
         } else if (randomInteger == 1) {
             double[]rageSuna = sunaNoKaivan();
             damage = rageSuna[0];
             chakra -= rageSuna[1];
             System.out.println("shikaku broke out of Gaara and Atack! \n unbelievably ! is atack  " + damage);
+            Thread.sleep(500);
         }
     return damage;
 
